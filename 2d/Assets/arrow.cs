@@ -29,6 +29,7 @@ public class arrow : MonoBehaviour
     public void makeMove()
     {
     change = this.transform.TransformVector(speed, 0, 0);
+        moving.active = true;
 
 
         //yield return new WaitForSeconds(3);
@@ -40,7 +41,10 @@ public class arrow : MonoBehaviour
            
 
             }
-            else { this.transform.position = randomPos; }
+            else { this.transform.position = randomPos; 
+                   moving.active = false;
+        
+        }
 
         }
     public void timeCount()
