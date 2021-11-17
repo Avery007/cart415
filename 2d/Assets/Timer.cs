@@ -19,11 +19,11 @@ public class Timer : MonoBehaviour
     {   
         if (timevalue > 0)
         {
-            Debug.Log("okey");
+            //Debug.Log("okey");
             timevalue -= Time.deltaTime;
             
             timeRound = Mathf.RoundToInt(timevalue);
-            Debug.Log(timevalue);
+           // Debug.Log(timevalue);
             message.text = "Your time left :" + timeRound;
         }
         else { timevalue = 0; }

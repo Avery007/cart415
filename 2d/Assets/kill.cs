@@ -16,7 +16,7 @@ public class kill : MonoBehaviour
         if (collision.collider.gameObject == player)
         {
             this.transform.position = Arrow1.randomY;
-            GetCrystal.count = GetCrystal.count - 2;
+            GetCrystal.count = GetCrystal.count - 1;
             Orbfeature.resetCount = true;
 
             Debug.Log("collided with player");
