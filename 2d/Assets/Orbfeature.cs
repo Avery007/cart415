@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class arrow : MonoBehaviour
+public class Orbfeature: MonoBehaviour
 {
     // Start is called before the first frame update
     public Vector3 randomPos;
     public bool clicking = false;
     public float timer=0;
     Vector3 change ;
-    public float speed = -0.5f;
+    public float speed = -50f;
     public UnityEngine.UI.Text text;
-    public static bool reset = false;
+    public static bool resetCount = false;
 
     void Start()
     {
@@ -24,7 +24,7 @@ public class arrow : MonoBehaviour
     void Update()
     {
         //timer += Time.deltaTime;
-        randomPos = new Vector3(11, Random.Range(-4f, 4f), 0);
+       
     }
     public void makeMove()
     {
@@ -41,8 +41,11 @@ public class arrow : MonoBehaviour
            
 
             }
-            else { this.transform.position = randomPos; 
-                   moving.active = false;
+            else
+        {
+            randomPos = new Vector3(10, Random.Range(-3.5f, 3.5f), 0); 
+            this.transform.position = randomPos; 
+            moving.active = false;
         
         }
 
@@ -60,12 +63,12 @@ public class arrow : MonoBehaviour
     }
     public void speedup(int movespeed)
     {
-        if (getOrb.count - 5 > 0) { 
+        if (GetCrystal.count - 5 > 0) { 
             speed = speed+movespeed;
         
-            getOrb.count = getOrb.count - 5;
-            reset = true;
-            Debug.Log(getOrb.count);
+            GetCrystal.count= GetCrystal.count-5;
+            resetCount = true;
+            
         }
     }
     }

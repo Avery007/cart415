@@ -19,12 +19,12 @@ public class moving : MonoBehaviour
     }
     void FixedUpdate()
     {
-        Vector3 moveVertical = this.transform.TransformVector(0, 0.1f, 0);
+        Vector3 moveVertical = this.transform.TransformVector(0, 2f, 0);
         if (!active)
         {
             if (direction == 1)
             {
-                if (this.transform.position.y < 7)
+                if (this.transform.position.y < 5)
                 {
                     this.transform.position = this.transform.position + moveVertical;
                 }
@@ -33,7 +33,7 @@ public class moving : MonoBehaviour
 
             if (direction == 0)
             {
-                if (this.transform.position.y > -7)
+                if (this.transform.position.y > -5)
                 {
 
                     this.transform.position = this.transform.position - moveVertical;

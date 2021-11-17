@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class arrow1 : MonoBehaviour
+public class Arrow1 : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Vector3 randomY;
+    public static Vector3 randomY;
     void Start()
     {
         

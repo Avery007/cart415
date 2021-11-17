@@ -14,10 +14,13 @@ public class kill : MonoBehaviour
     {
         Debug.Log("collidde with something");
         if (collision.collider.gameObject == player)
-        {                
-    
+        {
+            this.transform.position = Arrow1.randomY;
+            GetCrystal.count = GetCrystal.count - 2;
+            Orbfeature.resetCount = true;
+
             Debug.Log("collided with player");
-            text.text = "Sorry you die on the way!";
+            text.text = "oops! You got hurt!";
 
         }
 
