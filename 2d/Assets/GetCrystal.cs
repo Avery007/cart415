@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GetCrystal: MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject crystal;
+    public GameObject orb;
     public UnityEngine.UI.Text text;
     public static int count = 0;
     public Vector3 randomPo;
@@ -14,10 +14,10 @@ public class GetCrystal: MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("collidde with something");
-        if (collision.collider.gameObject == crystal)
+        if (collision.collider.gameObject == orb)
         {
             count = count + 1;
-            randomPo = new Vector3(10, Random.Range(-4f, 4f), 0);
+            randomPo = new Vector3(Random.Range(-9f, 9f), 3f,0);
             this.transform.position = randomPo;
             Debug.Log("collided with player");
             text.text = "Your orb" + count;

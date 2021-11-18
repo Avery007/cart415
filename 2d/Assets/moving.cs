@@ -20,8 +20,8 @@ public class moving : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 moveVertical = this.transform.TransformVector(0, 2f, 0);
-        if (!active)
-        {
+        //if (!active)
+       // {
             if (direction == 1)
             {
                 if (this.transform.position.y < 5)
@@ -42,5 +42,5 @@ public class moving : MonoBehaviour
             }
 
         }    
-     }
+     //}
 }

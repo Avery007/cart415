@@ -11,7 +11,7 @@ public class Orbfeature: MonoBehaviour
     public float timer=0;
     Vector3 change ;
     public float speedAdd = 0;
-    public float speed = -10;
+    public float speed = -0.1f;
   
 
     public UnityEngine.UI.Text text;
@@ -31,9 +31,10 @@ public class Orbfeature: MonoBehaviour
     }
     public void makeMove()
     {
-        speed = -10 + speedAdd;
+        speed = -0.1f + speedAdd;
     change = this.transform.TransformVector(speed, 0, 0);
         moving.active = true;
+        Debug.Log(speedAdd);
 
 
         //yield return new WaitForSeconds(3);
@@ -49,7 +50,7 @@ public class Orbfeature: MonoBehaviour
         {
             randomPos = new Vector3(10, Random.Range(-3.5f, 3.5f), 0); 
             this.transform.position = randomPos; 
-            moving.active = false;
+            //moving.active = false;
         
         }
 
@@ -71,7 +72,7 @@ public class Orbfeature: MonoBehaviour
             
             // Vector3 speedAdd = new Vector3(-5, 0, 0);
             speedAdd = speedAdd -5;
-            Debug.Log(change);
+           
             GetCrystal.count= GetCrystal.count-1;
             resetCount = true;
             
