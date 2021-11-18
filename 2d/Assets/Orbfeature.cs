@@ -10,8 +10,8 @@ public class Orbfeature: MonoBehaviour
     public bool clicking = false;
     public float timer=0;
     Vector3 change ;
-    public float speedAdd = 0;
-    public float speed = -0.1f;
+    public float speedChange = 0;
+    public float speed = -20;
   
 
     public UnityEngine.UI.Text text;
@@ -31,10 +31,10 @@ public class Orbfeature: MonoBehaviour
     }
     public void makeMove()
     {
-        speed = -0.1f + speedAdd;
+        speed = -20 + speedChange;
     change = this.transform.TransformVector(speed, 0, 0);
-        moving.active = true;
-        Debug.Log(speedAdd);
+        //moving.active = true;
+
 
 
         //yield return new WaitForSeconds(3);
@@ -68,14 +68,16 @@ public class Orbfeature: MonoBehaviour
     }
     public void speedup()
     {
-        if (GetCrystal.count > 0) {
-            
+        if (GetCrystal.count >= 10) {
+
             // Vector3 speedAdd = new Vector3(-5, 0, 0);
-            speedAdd = speedAdd -5;
-           
-            GetCrystal.count= GetCrystal.count-1;
-            resetCount = true;
-            
+            if (speed < -7)
+            {
+                speedChange = speedChange + 5;
+
+                GetCrystal.count = GetCrystal.count - 5;
+                resetCount = true;
+            }
         }
     }
     }

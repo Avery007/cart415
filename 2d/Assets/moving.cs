@@ -6,7 +6,7 @@ public class moving : MonoBehaviour
 {
     // Start is called before the first frame update
     public int direction = 1;
-    public static bool active = false;
+    public static int active = 1;// 1 means active, -1 inactive
     void Start()
     {
         
@@ -20,8 +20,8 @@ public class moving : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 moveVertical = this.transform.TransformVector(0, 2f, 0);
-        //if (!active)
-       // {
+        if (active>0)
+         {
             if (direction == 1)
             {
                 if (this.transform.position.y < 5)
@@ -42,5 +42,9 @@ public class moving : MonoBehaviour
             }
 
         }    
-     //}
+     }
+    public void NoMove ()
+    {
+        active = -active;
+    }
 }
