@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class yu : MonoBehaviour
+public class Yu : MonoBehaviour
 {
     public GameObject vise; // have to define obj to use setactive
     public float countTime;
     private WaitForSeconds waitTime;
-    public int setting = 1;
+    public static int setting = 1;
     // Start is called before the first frame update
     void Start()
     {
         vise.SetActive(false);
-        waitTime = new WaitForSeconds(3);
+        waitTime = new WaitForSeconds(20);
     }
 
     // Update is called once per frame
@@ -45,13 +45,7 @@ public class yu : MonoBehaviour
                 setting = -setting;
             Mine();
                 Debug.Log(setting);
-                // StartCoroutine(Timer());
-                // vise.SetActive(false);
-                //Timer();
-                // This is an Update method
-                // that runs every frame
-                // (without crashing)
-            //}
+                
         }
     }
 }
