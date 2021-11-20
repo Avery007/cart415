@@ -16,10 +16,11 @@ public class GetCrystal: MonoBehaviour
         Debug.Log("collidde with something");
         if (collision.collider.gameObject == orb)
         {
-            count = count + 1;
+            
             randomPo = new Vector3(Random.Range(-9f, 9f), 3f,0);
             this.transform.position = randomPo;
             Debug.Log("collided with player");
+            count = count + 1;
             text.text = "Your orb" + count;
 
 

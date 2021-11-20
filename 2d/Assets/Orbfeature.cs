@@ -9,7 +9,7 @@ public class Orbfeature: MonoBehaviour
     public Vector3 randomPos;
     public bool clicking = false;
     public float timer=0;
-    Vector3 change ;
+    private Vector3 change ;
     public float speedChange = 0;
     public float speed = -20;
   
@@ -71,7 +71,7 @@ public class Orbfeature: MonoBehaviour
         if (GetCrystal.count >= 10) {
 
             // Vector3 speedAdd = new Vector3(-5, 0, 0);
-            if (speed < -7)
+            if (speedChange < 14)
             {
                 speedChange = speedChange + 5;
 

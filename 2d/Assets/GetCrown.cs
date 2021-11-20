@@ -44,9 +44,9 @@ public class GetCrown : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (Orbfeature.resetCount)
+        //if (Orbfeature.resetCount)
         {
-            text.text = "Your orb" + count;
+           // text.text = "Your orb" + count;
         }
 
 
