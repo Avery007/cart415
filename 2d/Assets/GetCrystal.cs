@@ -43,7 +43,7 @@ public class GetCrystal: MonoBehaviour
     {
         if (Orbfeature.resetCount)
         {
-            text.text = "Your orb" + count;
+            text.text = "Your points: " + count;
         }
         
 

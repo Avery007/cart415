@@ -22,6 +22,7 @@ public class GetCrown : MonoBehaviour
             
             this.transform.position = originIP;//doesent work?
             GetCrystal.count += 20;
+            Orbfeature.resetCount = true;
             Debug.Log("collided with player");
             //text.text = "Your orb" + count;
 

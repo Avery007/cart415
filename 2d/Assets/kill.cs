@@ -15,12 +15,12 @@ public class kill : MonoBehaviour
         Debug.Log("collidde with something");
         if (collision.collider.gameObject == player)
         {
-            this.transform.position = Arrow1.randomY;
-            GetCrystal.count = GetCrystal.count - 1;
+            this.transform.position = Spell.randomY;
+            GetCrystal.count = GetCrystal.count - 10;
             Orbfeature.resetCount = true;
 
             Debug.Log("collided with player");
-            text.text = "oops! You got hurt!";
+            text.text = "oops! You got cursed and you lose 10 points!";
 
         }
 

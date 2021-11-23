@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrystalMov : MonoBehaviour
+public class CrownlMove : MonoBehaviour
 {
     // Start is called before the first frame update
     public Vector3 movement;
@@ -26,6 +26,7 @@ public class CrystalMov : MonoBehaviour
     }
     public void JobStart()
     {
+        GetCrystal.count = GetCrystal.count - 5;
         GetCrown.CrownState = true;
         StartCoroutine(GoldMov());
     }

@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Arrow1 : MonoBehaviour
+public class Spell : MonoBehaviour
 {
     // Start is called before the first frame update
     public static Vector3 randomY;
     public bool status = true;
-    public GameObject thisarrow;
+    public GameObject theSpell;
+    public UnityEngine.UI.Text text;
     void Start()
     {
         
@@ -20,10 +21,10 @@ public class Arrow1 : MonoBehaviour
     }
     void FixedUpdate()
     {
-        Vector3 change = this.transform.TransformVector(-0.2f, 0, 0);
+        Vector3 change = this.transform.TransformVector(0.2f, 0, 0);
         if (status)
         {
-            if (this.transform.position.x < 16)
+            if (this.transform.position.x < 12)
             {
                 this.transform.position = this.transform.position + change;
             }
@@ -34,13 +35,17 @@ public class Arrow1 : MonoBehaviour
             }
         }
         else { //Destroy(thisarrow);
-            thisarrow.SetActive(false); }
+           theSpell.SetActive(false); }
     }
-    public void KillArrow(bool state)
+    public void KillSpell()
     {
-        if (GetCrystal.count >= 0)
+        if (GetCrystal.count >= 20)
         {
-            status = state;
+            status = false;
+            GetCrystal.count = GetCrystal.count - 500;
+            Orbfeature.resetCount = true;
         }
+        else { text.text = "Sorry, you need more points to do stop the spell, work harder!"; } 
+        
     }
 }

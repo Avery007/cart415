@@ -45,6 +45,8 @@ public class moving : MonoBehaviour
      }
     public void NoMove ()
     {
+        GetCrystal.count = GetCrystal.count - 10;
+        Orbfeature.resetCount = true;
         active = -active;
     }
 }

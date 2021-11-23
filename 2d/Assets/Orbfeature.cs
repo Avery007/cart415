@@ -12,6 +12,8 @@ public class Orbfeature: MonoBehaviour
     private Vector3 change ;
     public float speedChange = 0;
     public float speed = -20;
+    public GameObject buttonVcontrol;
+    public GameObject buttonShift;
   
 
     public UnityEngine.UI.Text text;
@@ -19,6 +21,7 @@ public class Orbfeature: MonoBehaviour
 
     void Start()
     {
+        buttonShift.SetActive(false);
         //StartCoroutine(makeMove());
         
     }
@@ -67,8 +70,10 @@ public class Orbfeature: MonoBehaviour
 
     }
     public void speedup()
-    {
+    {   
         if (GetCrystal.count >= 10) {
+            buttonVcontrol.SetActive(false);
+            buttonShift.SetActive(true);
 
             // Vector3 speedAdd = new Vector3(-5, 0, 0);
             if (speedChange < 14)
@@ -79,6 +84,7 @@ public class Orbfeature: MonoBehaviour
                 resetCount = true;
             }
         }
+        else { text.text = "Sorry, you need more points to change speed, work harder!"; }
     }
     }
 

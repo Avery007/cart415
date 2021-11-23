@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Yu : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Yu : MonoBehaviour
     public float countTime;
     private WaitForSeconds waitTime;
     public static int setting = 1;
+    public UnityEngine.UI.Text text;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,8 +32,16 @@ public class Yu : MonoBehaviour
     }
 
     public void Jobtime()
+        
     {
-        StartCoroutine(Timer());
+        if (GetCrystal.count > 10)
+        {
+            GetCrystal.count = GetCrystal.count - 100;
+            StartCoroutine(Timer());
+        }
+        else { text.text = "Sorry you dont have enough points to mine,work harder!"; }
+        
+        
     }
     IEnumerator Timer()
     {

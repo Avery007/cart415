@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    public float timevalue=120; // notice the number in unity interface, or it wont work
+    public float timevalue=0; // notice the number in unity interface, or it wont work
     public int timeRound;
     public UnityEngine.UI.Text message;
     // Start is called before the first frame update
@@ -17,15 +17,15 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        if (timevalue > 0)
+        if (timevalue < 200)
         {
             //Debug.Log("okey");
-            timevalue -= Time.deltaTime;
+            timevalue += Time.deltaTime;
             
             timeRound = Mathf.RoundToInt(timevalue);
            // Debug.Log(timevalue);
             message.text = "Your time left :" + timeRound;
         }
-        else { timevalue = 0; }
+        //else { timevalue = 0; }
     }
 }

@@ -16,11 +16,11 @@ public class Lottery : MonoBehaviour
         {
             if (Yu.setting > 0)
             {
-                vise.SetActive(false);
+                vise.SetActive(false);//does not work?
                 gains = Random.Range(1, 5);
                 if (gains > 4)
                 {
-                    gains = 50;
+                    gains = 100;
                 }
                 else { gains = gains * 5; }
 
