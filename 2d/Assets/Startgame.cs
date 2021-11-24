@@ -9,10 +9,12 @@ public class Startgame : MonoBehaviour
     public GameObject orb;
     public GameObject self;
     public GameObject button;
+    public AudioSource source;
     void Start()
     {
         spell.SetActive(false);
         orb.SetActive(false);
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,7 +29,7 @@ public class Startgame : MonoBehaviour
         self.SetActive(false);
         button.SetActive(false);
         Timer.start= true;
-
+        source.Play();
     }
 
     

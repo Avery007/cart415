@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    public float timevalue=600; // notice the number in unity interface, or it wont work
-    public float timeRound=0;
+    //public float timevalue=10; // notice the number in unity interface, or it wont work
+    public float timeRound;
+    public float timeCount=0;
     public UnityEngine.UI.Text text;
     public static bool start=false;
     public GameObject orb;
@@ -21,24 +22,21 @@ public class Timer : MonoBehaviour
     {
         if (start)
         {
-            if (timevalue > 0)
+            if (timeRound > 0)
                 
             {
-                Debug.Log(timevalue);
+                //Debug.Log(timevalue);
                 //Debug.Log("okey");
-                timeRound +=Time.deltaTime;
-
-                timevalue = 600-Mathf.RoundToInt(timeRound);
+                timeCount +=Time.deltaTime;
+                Debug.Log(timeCount);
+                timeRound = 600-Mathf.RoundToInt(timeCount);
                 // Debug.Log(timevalue);
                 text.text = "Time: " + timeRound;
             }
-            else { timevalue = 0;
+            else { timeRound = 0;
                
                 orb.SetActive(false);
-                text.text = "Game over, what you have achived?";
-
-
-            }
+                text.text = "Game over, what you have achived?"; }
 
         }
     }

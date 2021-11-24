@@ -12,7 +12,7 @@ TagManager:
   - Water
   - UI
   - text
-  - 
+  - info
   - 
   - 
   - 
@@ -41,12 +41,21 @@ TagManager:
   - name: background
     uniqueID: 4245266653
     locked: 0
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: player
     uniqueID: 2933425077
     locked: 0
+  - name: UI
+    uniqueID: 3111550265
+    locked: 0
+  - name: New Layer
+    uniqueID: 806859841
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
   - name: text
     uniqueID: 2502473801
+    locked: 0
+  - name: info
+    uniqueID: 2065549197
     locked: 0
