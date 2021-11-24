@@ -52,8 +52,9 @@ public class Yu : MonoBehaviour
         //{
         text.text = "Your Treasure will be ready soon";
         yield return new WaitForSeconds(10);
-        text.text = "You get a window of opportunity!";
+       
         vise.SetActive(true);
+        text.text = "You get a window of opportunity!";
         yield return new WaitForSeconds(10);
         
         vise.SetActive(false);
