@@ -11,19 +11,21 @@ public class Orbfeature: MonoBehaviour
     public float timer=0;
     private Vector3 change ;
     public float speedChange = 0;
-    public float speed = -20;
+    public float speed = 20;
     public GameObject buttonVcontrol;
-    public GameObject buttonShift;
-  
+    public GameObject speedSlow;
+    public GameObject speedUp;
+
 
     public UnityEngine.UI.Text text;
-    public static bool resetCount = false;
+    public static bool resetCount = false; //disolay change reset
 
     void Start()
     {
-        buttonShift.SetActive(false);
+        speedSlow.SetActive(false);
+        speedUp.SetActive(false);
         //StartCoroutine(makeMove());
-        
+
     }
 
     // Update is called once per frame
@@ -34,7 +36,7 @@ public class Orbfeature: MonoBehaviour
     }
     public void makeMove()
     {
-        speed = -20 + speedChange;
+        //speed = -20 + speedChange;
     change = this.transform.TransformVector(speed, 0, 0);
         //moving.active = true;
 
@@ -42,7 +44,7 @@ public class Orbfeature: MonoBehaviour
 
         //yield return new WaitForSeconds(3);
 
-        if (this.transform.position.x > -11)
+        if (this.transform.position.x < 11)
             {
            // yield return new WaitForSeconds(3);
             this.transform.position = this.transform.position + change;
@@ -51,41 +53,55 @@ public class Orbfeature: MonoBehaviour
             }
             else
         {
-            randomPos = new Vector3(10, Random.Range(-3.5f, 3.5f), 0); 
+            randomPos = new Vector3(-10, Random.Range(-3.5f, 3.5f), 0); 
             this.transform.position = randomPos; 
             //moving.active = false;
         
         }
 
         }
-    public void timeCount()
+    
+    public void speedControl()
     {
-        timer += Time.deltaTime;
-        Debug.Log(timer);
-        if (timer>10)
-        {
-            timer = 0;
-            //speed = -0.5f;
-        }
-
-    }
-    public void speedup()
-    {   
-        if (GetCrystal.count >= 10) {
+        if (GetCrystal.count >= 30) {
             buttonVcontrol.SetActive(false);
-            buttonShift.SetActive(true);
-
-            // Vector3 speedAdd = new Vector3(-5, 0, 0);
-            if (speedChange < 14)
-            {
-                speedChange = speedChange + 5;
-
-                GetCrystal.count = GetCrystal.count - 5;
-                resetCount = true;
-            }
+            speedSlow.SetActive(true);
+            speedUp.SetActive(true);
+            text.text = "You can change speed now!";
+            GetCrystal.count -= 30;
+            resetCount = true;
         }
         else { text.text = "Sorry, you need more points to change speed, work harder!"; }
     }
+        
+    
+    public void speedslow() { 
+    if (speed>5)
+            {
+                speedChange = speedChange -5;
+                speed = 20 + speedChange;
+            //GetCrystal.count = GetCrystal.count - 5;
+               // resetCount = true;
+                //speed = 20 + speedChange;
+            text.text = "Your new speed: "+ speed;
+        }
+        
+        else { text.text = "You cannot be slower"; }
     }
+    public void speedup()
+    {
+        if (speed<30 )
+        {
+            speedChange = speedChange +5;
+            speed = 20 + speedChange;
+            //GetCrystal.count = GetCrystal.count - 5;
+            //resetCount = true;
+          
+            text.text = "Your new speed: " + speed;
+        }
+
+        else { text.text = "Your cannot run faster"; }
+    }
+}
 
 

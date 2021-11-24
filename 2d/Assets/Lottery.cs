@@ -11,13 +11,13 @@ public class Lottery : MonoBehaviour
     public UnityEngine.UI.Text text;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("collidde with something");
+        
         if (collision.collider.gameObject == player)
         {
-            if (Yu.setting > 0)
-            {
+            
+            
                 vise.SetActive(false);//does not work?
-                gains = Random.Range(1, 5);
+                gains = Random.Range(1, 6);
                 if (gains > 4)
                 {
                     gains = 100;
@@ -27,10 +27,9 @@ public class Lottery : MonoBehaviour
                 GetCrystal.count += gains;
                 Orbfeature.resetCount = true;
 
-                Debug.Log("collided with player");
                 text.text = "Congraduations! You have got: " + gains;
 
-            }
+            
 
         }
 

@@ -12,15 +12,13 @@ public class kill : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("collidde with something");
+           //Debug.Log("collidde with something");
         if (collision.collider.gameObject == player)
         {
             this.transform.position = Spell.randomY;
-            GetCrystal.count = GetCrystal.count - 10;
+            GetCrystal.count = GetCrystal.count - 5;
             Orbfeature.resetCount = true;
-
-            Debug.Log("collided with player");
-            text.text = "oops! You got cursed and you lose 10 points!";
+            text.text = "oops! You got cursed and you lose 5 points!";
 
         }
 

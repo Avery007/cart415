@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class moving : MonoBehaviour
 {
     // Start is called before the first frame update
     public int direction = 1;
     public static int active = 1;// 1 means active, -1 inactive
+    public UnityEngine.UI.Text text;
     void Start()
     {
         
@@ -45,8 +47,12 @@ public class moving : MonoBehaviour
      }
     public void NoMove ()
     {
-        GetCrystal.count = GetCrystal.count - 10;
-        Orbfeature.resetCount = true;
-        active = -active;
+        if (GetCrystal.count > 20)
+        {
+            GetCrystal.count = GetCrystal.count - 2;
+            Orbfeature.resetCount = true;
+            active = -active;
+        }
+        else { text.text = "Sorry, you need more points to do so, work harder!"; }
     }
 }
