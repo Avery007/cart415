@@ -19,9 +19,9 @@ public class Crystalmove : MonoBehaviour
     void FixedUpdate()
     {
        // Vector3 mov = this.transform.TransformVector(0, -1f, 0);
-       if (this.transform.position.y <-3) //notice the position, a bit werid
+       if (this.transform.position.y <-4) //notice the position, a bit werid
         {
-          randomX = new Vector3(Random.Range(-8f, 8f),3f, 0);
+          randomX = new Vector3(Random.Range(-9f, 9f),4f, 0);
               this.transform.position = randomX; }
     }
 }

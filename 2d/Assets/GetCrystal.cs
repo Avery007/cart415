@@ -10,6 +10,7 @@ public class GetCrystal: MonoBehaviour
     public UnityEngine.UI.Text text;
     public static int count = 0;
     public Vector3 randomPo;
+    public UnityEngine.UI.Text info;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -21,8 +22,8 @@ public class GetCrystal: MonoBehaviour
             this.transform.position = randomPo;
             Debug.Log("collided with player");
             count = count + 1;
-            text.text = "Your orb" + count;
-
+            text.text = "Your points: " + count;
+            info.text = "You got crystal +1";
 
         }
         

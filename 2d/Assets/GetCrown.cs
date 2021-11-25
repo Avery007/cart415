@@ -19,7 +19,7 @@ public class GetCrown : MonoBehaviour
         {
             CrownState = false;
             //count = count + 1;
-            
+            text.text = "You got Crown +20";
             this.transform.position = originIP;//doesent work?
             GetCrystal.count += 20;
             Orbfeature.resetCount = true; 

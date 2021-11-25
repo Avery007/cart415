@@ -35,7 +35,7 @@ public class Yu : MonoBehaviour
     public void Jobtime()
         
     {
-        if (GetCrystal.count > 100)
+        if (GetCrystal.count > 50)
         {
             GetCrystal.count = GetCrystal.count - 20;
             StartCoroutine(Timer());

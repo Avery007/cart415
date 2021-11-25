@@ -9,6 +9,10 @@ public class moving : MonoBehaviour
     public int direction = 1;
     public static int active = 1;// 1 means active, -1 inactive
     public UnityEngine.UI.Text text;
+    public GameObject jump;
+    public GameObject stay;
+    public GameObject stateButton;
+    //  public UnityEngine.UI.Text textButton;
     void Start()
     {
         
@@ -26,7 +30,7 @@ public class moving : MonoBehaviour
          {
             if (direction == 1)
             {
-                if (this.transform.position.y < 5)
+                if (this.transform.position.y < 4)
                 {
                     this.transform.position = this.transform.position + moveVertical;
                 }
@@ -35,7 +39,7 @@ public class moving : MonoBehaviour
 
             if (direction == 0)
             {
-                if (this.transform.position.y > -5)
+                if (this.transform.position.y > -4)
                 {
 
                     this.transform.position = this.transform.position - moveVertical;
@@ -45,14 +49,26 @@ public class moving : MonoBehaviour
 
         }    
      }
-    public void NoMove ()
+
+    public void StateChange()
     {
-        if (GetCrystal.count > 20)
+        if (GetCrystal.count > 15)
         {
-            GetCrystal.count = GetCrystal.count - 2;
+            stateButton.SetActive(false);
+              GetCrystal.count = GetCrystal.count - 15;
             Orbfeature.resetCount = true;
-            active = -active;
+
+            jump.SetActive(true);
+            stay.SetActive(true);
         }
         else { text.text = "Sorry, you need more points to do so, work harder!"; }
+    }
+    public void NoMove()
+    {    
+            active = -1;     
+    }
+    public void Jump()
+    {
+        active = 1;
     }
 }

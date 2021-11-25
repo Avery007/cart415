@@ -15,6 +15,7 @@ public class Orbfeature: MonoBehaviour
     public GameObject buttonVcontrol;
     public GameObject speedSlow;
     public GameObject speedUp;
+  
 
 
     public UnityEngine.UI.Text text;
@@ -34,6 +35,14 @@ public class Orbfeature: MonoBehaviour
         //timer += Time.deltaTime;
        
     }
+    private void FixedUpdate()
+    {
+        if (this.transform.position.x > 10) // must in the update or it might disapear on screen by change
+        {
+            randomPos = new Vector3(-9, Random.Range(-3.5f, 3.5f), 0);
+            this.transform.position = randomPos;
+        }
+    }
     public void makeMove()
     {
         //speed = -20 + speedChange;
@@ -44,20 +53,14 @@ public class Orbfeature: MonoBehaviour
 
         //yield return new WaitForSeconds(3);
 
-        if (this.transform.position.x < 11)
+        if (this.transform.position.x < 10)
             {
            // yield return new WaitForSeconds(3);
             this.transform.position = this.transform.position + change;
            
 
             }
-            else
-        {
-            randomPos = new Vector3(-10, Random.Range(-3.5f, 3.5f), 0); 
-            this.transform.position = randomPos; 
-            //moving.active = false;
-        
-        }
+         
 
         }
     

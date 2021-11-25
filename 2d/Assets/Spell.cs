@@ -38,10 +38,10 @@ public class Spell : MonoBehaviour
     }
     public void KillSpell()
     {
-        if (GetCrystal.count >= 300)
+        if (GetCrystal.count >= 100)
         {
            
-            GetCrystal.count = GetCrystal.count - 300;
+            GetCrystal.count = GetCrystal.count - 100;
             Orbfeature.resetCount = true;
             text.text = "Well done, you wont be cursed anymore ";
             Destroy(theSpell);

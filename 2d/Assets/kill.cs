@@ -16,7 +16,7 @@ public class kill : MonoBehaviour
         if (collision.collider.gameObject == player)
         {
             this.transform.position = Spell.randomY;
-            GetCrystal.count = GetCrystal.count - 5;
+            GetCrystal.count = GetCrystal.count - 2;
             Orbfeature.resetCount = true;
             text.text = "oops! You got cursed and you lose 5 points!";
 

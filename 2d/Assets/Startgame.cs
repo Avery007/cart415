@@ -10,6 +10,19 @@ public class Startgame : MonoBehaviour
     public GameObject self;
     public GameObject button;
     public AudioSource source;
+    public GameObject buttonMove;
+    public GameObject text1;
+    public GameObject text2;
+    public GameObject c1;
+    public GameObject c2;
+    public GameObject c3;
+
+    public GameObject buttonSpeed;
+    public GameObject buttonCrown;
+    public GameObject buttonCurse;
+    public GameObject buttonStop;
+    public GameObject buttonMine;
+
     void Start()
     {
         spell.SetActive(false);
@@ -28,7 +41,18 @@ public class Startgame : MonoBehaviour
         orb.SetActive(true);
         self.SetActive(false);
         button.SetActive(false);
+        buttonMove.SetActive(true);
+        text1.SetActive(true);
+        text2.SetActive(true);
         Timer.start= true;
+        buttonCrown.SetActive(true);
+        buttonSpeed.SetActive(true);
+        buttonMine.SetActive(true);
+        buttonCurse.SetActive(true);
+        buttonStop.SetActive(true);
+        c1.SetActive(true);
+        c2.SetActive(true);
+        c3.SetActive(true);
         source.Play();
     }
 
